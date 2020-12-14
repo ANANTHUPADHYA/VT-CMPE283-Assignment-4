@@ -33,16 +33,16 @@ We Performed the above steps and was successfully able to boot the VM by enablin
 ### Screenshots
 
 #### Nested Paging 
- ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-4/blob/master/images/Image1.png)
+ ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-4/blob/main/images/Image1.png)
 
 #### Shadow paging
 
 #####  Boot 
- ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-4/blob/master/images/Image2.png)
+ ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-4/blob/main/images/Image2.png)
 
 #####  After Boot
 
-  ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-3/blob/master/images/Image3.png)
+  ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-4/blob/main/images/Image3.png)
 
 #### Questions
 ##### For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).
