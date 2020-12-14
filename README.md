@@ -11,30 +11,54 @@ Nested Paging vs. Shadow Paging
  
 
 Run your assignment 3 code and boot a test VM using that code.
+
 Once the VM has booted, record total exit count information (total count for each type of exit handled by KVM). You should do this via a sequence of queries of CPUID leaf function 0x4FFFFFFE.
+
 Shutdown your test (inner) VM.
+
 Remove the ‘kvm-intel’ module from your running kernel:
+```
 rmmod kvm-intel
+```
 Reload the kvm-intel module with the parameter ept=0 (this will disable nested paging and force KVM to use shadow paging instead)
+
 The module you want is usually found in /lib/modules/XXX/kernel/arch/x86/kvm , where XXX is the version of the kernel you build for assignment 3 – don’t make a mistake and use the one that came with the stock Linux installation.
+```
 insmod /lib/modules/XXX/kernel/arch/x86/kvm/kvm-intel.ko ept=0
+```
 Boot the same test VM again, and capture the same output as you did in step 2.
 
+We Performed the above steps and was successfully able to boot the VM by enabling Shadow paging
 
+### Screenshots
 
-Permformed the above steps and was successfully able to boot the VM by enabling Shadow paging
+#### Nested Paging 
+ ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-4/blob/master/images/Image1.png)
 
-####  Questions
+#### Shadow paging
+
+#####  Boot 
+ ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-4/blob/master/images/Image2.png)
+
+#####  After Boot
+
+  ![](https://github.com/ANANTHUPADHYA/VT-CMPE283-Assignment-3/blob/master/images/Image3.png)
+
+#### Questions
 ##### For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).
 
 As this assignment had no code changes and involved only enabling the Shadow paging we enabled the shadow paging and then then ran the scritps which we had for Assignment 3
+We both together sat and did this Assignment over a conference call.
 
 * Include a sample of your print of exit count output from dmesg from “with ept” and “without ept”.
+
+Pasted the above screenshot with ept enabled and without ept enable above.
 
 
 * What did you learn from the count of exits? Was the count what you expected? If not, why not?
 
 In shadow paging, the number of exits increases when compared to nested paging. This is expected because during nested paging VM exit occurs when an EPT violation occurs. But in the case of shadow paging, it could exit if VM attempts to execute CR0, CR3, CR4 or any exits which are related to paging such as a page fault.
+I learnt that nested paging is the efficient mode of paging and hence this is widely used across all the processor families.
 
 * What changed between the two runs (ept vs no-ept)?
 
